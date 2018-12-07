@@ -3,7 +3,7 @@
 
 schema:
   schema_id: bopomofo_tw
-  name: 注音·臺灣正體 簡繁轉換
+  name: 注音·臺灣正體·簡繁轉換
   version: "1.6"
   author:
     - 佛振 <chen.sst@gmail.com>
@@ -24,12 +24,13 @@ switches:
     states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
   - options: [ zh_tw, zh_simp ]
     states:
       - 字形 → 臺灣正體
       - 字形 → 簡化字
     reset: 0
-    
 
 engine:
   processors:
@@ -149,7 +150,7 @@ reverse_lookup:
 
 zh_tw:
   option_name: zh_tw
-  opencc_config: zht2zhtw_v.ini
+  opencc_config: t2tw.json
   tips: none
   excluded_types: [ reverse_lookup ]
 
